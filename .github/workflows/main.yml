@@ -30,6 +30,8 @@ jobs:
     - run: git config --global user.name "DevKn1ght"
     - run: git config --global user.email "lacerte.dev@gmail.com"
     # upgrade npm version in package.json to the tag used in the release.
+    # clean working directory
+    - run: git stash
     - run: npm version patch
     - run: npm publish
       env:
