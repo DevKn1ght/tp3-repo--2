@@ -1,9 +1,9 @@
 name: NPM publish package
 
-on:
-  release:
-    # This specifies that the build will be triggered when we publish a release
-    types: [published]
+on: push
+#  release:
+#    # This specifies that the build will be triggered when we publish a release
+#    types: [published]
 
 jobs:
   build:
@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
+      #with:
         # "ref" specifies the branch to check out.
         # "github.event.release.target_commitish" is a global variable and specifies the branch the release targeted
-        ref: ${{ github.event.release.target_commitish }}
+        #ref: ${{ github.event.release.target_commitish }}
     # install Node.js
     - name: Use Node.js 12
       uses: actions/setup-node@v1
